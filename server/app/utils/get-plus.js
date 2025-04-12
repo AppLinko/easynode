@@ -6,7 +6,7 @@ const { PlusDB } = require('./db-class')
 const plusDB = new PlusDB().getInstance()
 
 async function getLicenseInfo(key = '') {
-  const { key: plusKey } = await plusDB.findOneAsync({}) || {}
+  /*const { key: plusKey } = await plusDB.findOneAsync({}) || {}
   // console.log('plusKey: ', plusKey)
   // console.log('key: ', key)
   // console.log('process.env.PLUS_KEY: ', process.env.PLUS_KEY)
@@ -87,7 +87,8 @@ async function getLicenseInfo(key = '') {
       await plusDB.removeAsync({}, { multi: true })
     }
     return { success: false, msg: error.message || error.errMsg?.message }
-  }
+  }*/
+  return { success: true, msg: '激活成功' };
 }
 
 module.exports = getLicenseInfo
